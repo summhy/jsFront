@@ -2,6 +2,7 @@ let h1Color = document.getElementById("color");
 let pRGB = document.getElementById("rgb");
 let imgColor = document.getElementById("imgColor");
 let tarjeta = document.getElementById("tarjeta");
+let formulario = document.getElementById("formulario");
 
 let color = {
   nombre: "verde",
@@ -37,4 +38,11 @@ function indicaColor(elemento) {
 
 function ocultar() {
   tarjeta.hidden = true;
+}
+
+
+function func_formulario(event){
+  event.preventDefault();
+  formulario.hidden = false;
+  document.getElementById("ftitulo").value = arregloColores[elemento.title].nombre;
 }

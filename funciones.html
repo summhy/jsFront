@@ -1,0 +1,30 @@
+<script>
+
+let edad;
+do{
+    edad = prompt("Dime tu edad");
+    console.log(edad)
+}while(edad <18);
+
+contador=0;
+while(edad >= 18){
+    edad--;
+    contador++;
+}
+console.log("tienes ",contador-1, " años sobre la edad legal")
+
+
+switch (contador){
+    case 1:
+        console.log("18 recien cumplidos");
+       break;
+    case 2:   
+        console.log("cumpliste 18 años hace 1 año");
+        break; 
+    default:   
+        console.log("cumpliste 18 años hace ", contador-1," años");
+        break;     
+}
+
+
+</script>

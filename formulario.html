@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="nombre">Front</h1>
+    <a href="#" ondblclick="mostrarFormulario()">Presiona Aquí</a>
+<div id="formulario" hidden>
+    <a href="#" onclick="ocultar()" >X</a>
+    <input type="text" id="txtNombre" >
+    <input type="button" value="cambiar" onclick="cambiar(0)">
+    
+</div>
+
+<script>
+
+function cambiar(indice){
+    regiones[indice].nombre = document.getElementById("txtNombre").value;
+    console.log(regiones);
+}
+
+
+function mostrarFormulario(){
+    console.dir(document.getElementById("txtNombre"));
+    document.getElementById("formulario").hidden=false;
+    document.getElementById("txtNombre").value = document.getElementById("nombre").innerText;
+}
+
+function ocultar(){
+    document.getElementById("formulario").hidden=true;
+}
+
+let curso = {
+            nombre:"Front",
+            estudiantes: [{nombre: "Pepe", apellido:"Lopez", promedio:5.4},
+                          {nombre: "Sonia", promedio: 6.8},
+                          {nombre: "Jose", promedio: 4.4},
+                          ],
+            promedioCurso: function(){
+                suma =0;
+                //console.log("en la funcion",curso.estudiantes);
+                 this.estudiantes.forEach(element => {
+                    suma +=element.promedio;
+                    //console.log(element.promedio);
+                });
+                return suma/this.estudiantes.length; 
+                
+            }        
+}
+
+
+let regiones = [{
+                nombre:"Valparaiso",
+                numero:5,
+                atractivos:["atractivo1","atractivo2","atractivo3"],
+                descripcion:"Hermosa",
+                imagen:"link de la imagen"
+},
+{
+                nombre:"Rancagua",
+                numero:6,
+                atractivos:["atractivo rancagua 1","atractivo rancagua 2","atractivo rancagua 3"],
+                descripcion:"Hermosa",
+                imagen:"link de la imagen"
+}
+]
+
+regiones.forEach(element=>{
+    console.log(element.nombre);
+})
+
+
+
+</script>
+</body>
+</html>
